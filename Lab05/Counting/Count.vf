@@ -1,0 +1,108 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Count.vf
+// /___/   /\     Timestamp : 09/16/2019 09:18:24
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab05/Counting/Count.vf -w C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab05/Counting/Count.sch
+//Design Name: Count
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module FJKC_HXILINX_Count(Q, C, CLR, J, K);
+   
+   output             Q;
+
+   input 	      C;	
+   input 	      CLR;	
+   input              J;
+   input              K;
+   
+   parameter INIT = 1'b0;
+   reg                Q = INIT;
+
+
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  Q <= 1'b0;
+	else
+        begin
+           if(!J)
+           begin
+              if(K)
+              Q <= 1'b0;
+           end
+           else
+           begin
+              if(!K)
+              Q <= 1'b1;
+              else 
+              Q <= !Q;
+           end
+        end
+     end
+   
+endmodule
+`timescale 1ns / 1ps
+
+module Count(CLK_P45, 
+             CLR_P46, 
+             Seven);
+
+   (* CLOCK_DEDICATED_ROUTE = "TRUE" *) 
+    input CLK_P45;
+    input CLR_P46;
+   output [6:0] Seven;
+   
+   wire [3:0] Input;
+   wire XLXN_24;
+   wire XLXN_31;
+   wire XLXN_34;
+   wire XLXN_37;
+   
+   (* HU_SET = "XLXI_7_0" *) 
+   FJKC_HXILINX_Count  XLXI_7 (.C(XLXN_34), 
+                              .CLR(CLR_P46), 
+                              .J(XLXN_37), 
+                              .K(XLXN_37), 
+                              .Q(Input[0]));
+   (* HU_SET = "XLXI_8_1" *) 
+   FJKC_HXILINX_Count  XLXI_8 (.C(XLXN_34), 
+                              .CLR(CLR_P46), 
+                              .J(Input[0]), 
+                              .K(XLXN_31), 
+                              .Q(Input[1]));
+   (* HU_SET = "XLXI_9_2" *) 
+   FJKC_HXILINX_Count  XLXI_9 (.C(XLXN_34), 
+                              .CLR(CLR_P46), 
+                              .J(XLXN_24), 
+                              .K(Input[1]), 
+                              .Q(Input[2]));
+   AND2  XLXI_11 (.I0(Input[1]), 
+                 .I1(Input[0]), 
+                 .O(XLXN_24));
+   OR2  XLXI_12 (.I0(Input[2]), 
+                .I1(Input[0]), 
+                .O(XLXN_31));
+   INV  XLXI_13 (.I(CLK_P45), 
+                .O(XLXN_34));
+   VCC  XLXI_15 (.P(XLXN_37));
+   FourBitsToSevenSegment  XLXI_16 (.Input(Input[3:0]), 
+                                   .COMMON1(), 
+                                   .COMMON2(), 
+                                   .COMMON3(), 
+                                   .SevSeg(Seven[6:0]));
+   GND  XLXI_17 (.G(Input[3]));
+endmodule

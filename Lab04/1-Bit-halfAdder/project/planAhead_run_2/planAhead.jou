@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sun Sep 08 20:54:55 2019
+# Process ID: 13724
+# Log file: C:/Users/pasaw/Desktop/FPGA/Lab04/1-Bit-halfAdder/lab4-1/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/pasaw/Desktop/FPGA/Lab04/1-Bit-halfAdder/lab4-1/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/pasaw/Desktop/FPGA/Lab04/1-Bit-halfAdder/lab4-1/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P81 [get_ports LED1_P81]
+endgroup
+save_constraints

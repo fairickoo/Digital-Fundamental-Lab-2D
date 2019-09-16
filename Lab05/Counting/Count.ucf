@@ -1,0 +1,16 @@
+
+
+
+
+NET "CLK_P45" LOC = P45;
+NET "CLR_P46" LOC = P46;
+
+# PlanAhead Generated physical constraints 
+
+NET "Seven[6]" LOC = P41;
+NET "Seven[5]" LOC = P40;
+NET "Seven[4]" LOC = P35;
+NET "Seven[3]" LOC = P34;
+NET "Seven[2]" LOC = P32;
+NET "Seven[1]" LOC = P29;
+NET "Seven[0]" LOC = P27;

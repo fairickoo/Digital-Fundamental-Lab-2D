@@ -1,0 +1,65 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : calculate.vf
+// /___/   /\     Timestamp : 09/08/2019 21:24:58
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/pasaw/Desktop/FPGA/Lab04/lab4-2/calculate.vf -w C:/Users/pasaw/Desktop/FPGA/Lab04/lab4-2/calculate.sch
+//Design Name: calculate
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module calculate(SW0_P66, 
+                 SW1_P62, 
+                 SW2_P61, 
+                 SW3_P59, 
+                 LED0_P82, 
+                 LED1_P81, 
+                 LED2_P80);
+
+    input SW0_P66;
+    input SW1_P62;
+    input SW2_P61;
+    input SW3_P59;
+   output LED0_P82;
+   output LED1_P81;
+   output LED2_P80;
+   
+   wire XLXN_78;
+   wire XLXN_79;
+   wire XLXN_81;
+   wire XLXN_82;
+   
+   XOR2  XLXI_24 (.I0(SW1_P62), 
+                 .I1(SW0_P66), 
+                 .O(LED0_P82));
+   AND2  XLXI_25 (.I0(SW1_P62), 
+                 .I1(SW0_P66), 
+                 .O(XLXN_78));
+   XOR2  XLXI_26 (.I0(SW3_P59), 
+                 .I1(SW2_P61), 
+                 .O(XLXN_79));
+   AND2  XLXI_27 (.I0(SW3_P59), 
+                 .I1(SW2_P61), 
+                 .O(XLXN_81));
+   XOR2  XLXI_28 (.I0(XLXN_79), 
+                 .I1(XLXN_78), 
+                 .O(LED1_P81));
+   AND2  XLXI_29 (.I0(XLXN_79), 
+                 .I1(XLXN_78), 
+                 .O(XLXN_82));
+   OR2  XLXI_30 (.I0(XLXN_81), 
+                .I1(XLXN_82), 
+                .O(LED2_P80));
+endmodule

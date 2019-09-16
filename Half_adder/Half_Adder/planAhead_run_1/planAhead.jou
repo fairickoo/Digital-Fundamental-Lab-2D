@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sun Sep 08 20:34:13 2019
+# Process ID: 7164
+# Log file: C:/Users/pasaw/Desktop/FPGA/Half_adder/Half_Adder/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/pasaw/Desktop/FPGA/Half_adder/Half_Adder/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/pasaw/Desktop/FPGA/Half_adder/Half_Adder/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P82 [get_ports L0_P82]
+endgroup
+startgroup
+set_property package_pin P81 [get_ports L1_P81]
+endgroup
+startgroup
+set_property package_pin P66 [get_ports SW0_P66]
+endgroup
+startgroup
+set_property package_pin P62 [get_ports SW1_P62]
+endgroup
+save_constraints

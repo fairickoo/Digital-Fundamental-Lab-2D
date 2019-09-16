@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sun Sep 15 20:42:03 2019
+# Process ID: 14008
+# Log file: C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab05/BCD_To_7_Segmnt/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab05/BCD_To_7_Segmnt/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab05/BCD_To_7_Segmnt/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P66 [get_ports CLK_P66]
+endgroup
+startgroup
+set_property package_pin P61 [get_ports CLR]
+endgroup
+set_property package_pin "" [get_ports [list  LCD_A_P_75]]
+startgroup
+set_property package_pin P61 [get_ports CLR]
+endgroup
+startgroup
+set_property package_pin P62 [get_ports JA_P62]
+endgroup
+startgroup
+set_property package_pin P75 [get_ports LCD_A_P_75]
+endgroup
+startgroup
+set_property package_pin P74 [get_ports LCD_B_P_74]
+endgroup
+startgroup
+set_property package_pin P67 [get_ports LCD_C_P67]
+endgroup
+save_constraints

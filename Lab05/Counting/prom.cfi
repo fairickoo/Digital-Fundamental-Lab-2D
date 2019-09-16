@@ -1,0 +1,11 @@
+# PROMGEN: Xilinx Prom Generator P.20131013
+# Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION P.20131013
+DATE            09/16/2019 - 09:34
+SOURCE          C:\Users\pasaw\Desktop\2D\Digital-Fundamental-Lab-2D\Lab05\Counting\prom.mcs
+DEVICE          1024K
+DATA_WIDTH      1
+FILL_DATA       0xFF
+SIGNATURE       0x0AC74712
+START_ADDRESS   0x00000000 END_ADDRESS 0x0005327B DIRECTION_UP   "C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab05/Counting/count.bit" 6slx9tqg144
