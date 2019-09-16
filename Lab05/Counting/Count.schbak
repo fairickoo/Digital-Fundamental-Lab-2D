@@ -7,9 +7,12 @@
     </attr>
     <netlist>
         <signal name="XLXN_24" />
-        <signal name="Input(1)" />
-        <signal name="Input(0)" />
-        <signal name="Input(2)" />
+        <signal name="Input(1)">
+        </signal>
+        <signal name="Input(0)">
+        </signal>
+        <signal name="Input(2)">
+        </signal>
         <signal name="XLXN_31" />
         <signal name="XLXN_34" />
         <signal name="CLR_P46" />
@@ -23,7 +26,8 @@
         </signal>
         <signal name="Input(3)" />
         <signal name="Seven(6:0)" />
-        <signal name="Input(3:0)" />
+        <signal name="Input(3:0)">
+        </signal>
         <port polarity="Input" name="CLR_P46" />
         <port polarity="Input" name="CLK_P45" />
         <port polarity="Output" name="Seven(6:0)" />
