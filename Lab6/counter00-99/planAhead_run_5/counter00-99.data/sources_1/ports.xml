@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Interface Version="1" Minor="1">
+	<Ifc Id="ROOT" Top="1">
+		<Bus Id="SS">
+			<Port Id="6" Dir="OUT"/>
+			<Port Id="5" Dir="OUT"/>
+			<Port Id="4" Dir="OUT"/>
+			<Port Id="3" Dir="OUT"/>
+			<Port Id="2" Dir="OUT"/>
+			<Port Id="1" Dir="OUT"/>
+			<Port Id="0" Dir="OUT"/>
+		</Bus>
+		<Port Id="OSC" Dir="IN"/>
+		<Port Id="PB_3" Dir="IN"/>
+		<Port Id="C0" Dir="OUT"/>
+		<Port Id="P43" Dir="OUT"/>
+		<Port Id="XLXN_66" Dir="OUT"/>
+		<Port Id="XLXN_67" Dir="OUT"/>
+		<Port Id="XLXN_68" Dir="OUT"/>
+		<Port Id="XLXN_69" Dir="OUT"/>
+		<Port Id="XLXN_70" Dir="OUT"/>
+		<Port Id="XLXN_71" Dir="OUT"/>
+		<Port Id="XLXN_72" Dir="OUT"/>
+		<Port Id="XLXN_73" Dir="OUT"/>
+	</Ifc>
+</Interface>
+

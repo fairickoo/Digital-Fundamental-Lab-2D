@@ -1,0 +1,88 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : counter.vf
+// /___/   /\     Timestamp : 10/04/2019 21:11:35
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab6/counter00-99/counter.vf -w C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab6/counter00-99/counter.sch
+//Design Name: counter
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 100 ps / 10 ps
+
+module CB4CE_HXILINX_counter(CEO, Q0, Q1, Q2, Q3, TC, C, CE, CLR);
+   
+   localparam TERMINAL_COUNT = 4'b1111;
+   
+   output             CEO;
+   output             Q0;
+   output             Q1;
+   output             Q2;
+   output             Q3;
+   output             TC;
+
+   input 	      C;	
+   input 	      CE;	
+   input 	      CLR;	
+   
+   reg                Q0;
+   reg                Q1;
+   reg                Q2;
+   reg                Q3;
+   
+   always @(posedge C or posedge CLR)
+     begin
+	if (CLR)
+	  {Q3, Q2, Q1, Q0} <= 4'b0000;
+	else if (CE)
+	  {Q3, Q2, Q1,Q0} <= {Q3, Q2, Q1,Q0} + 1;
+     end
+   
+   assign CEO = TC & CE;
+   assign TC = ({Q3, Q2, Q1, Q0} == TERMINAL_COUNT);
+   
+endmodule
+`timescale 1ns / 1ps
+
+module counter(CLK, 
+               CLR, 
+               CEO, 
+               Q0, 
+               Q1, 
+               Q2, 
+               Q3, 
+               TC);
+
+    input CLK;
+    input CLR;
+   output CEO;
+   output Q0;
+   output Q1;
+   output Q2;
+   output Q3;
+   output TC;
+   
+   wire XLXN_1;
+   
+   (* HU_SET = "XLXI_1_1" *) 
+   CB4CE_HXILINX_counter  XLXI_1 (.C(CLK), 
+                                 .CE(XLXN_1), 
+                                 .CLR(CLR), 
+                                 .CEO(CEO), 
+                                 .Q0(Q0), 
+                                 .Q1(Q1), 
+                                 .Q2(Q2), 
+                                 .Q3(Q3), 
+                                 .TC(TC));
+   VCC  XLXI_2 (.P(XLXN_1));
+endmodule
