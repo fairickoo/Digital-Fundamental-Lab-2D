@@ -7,7 +7,7 @@
 // \   \   \/     Version : 14.7
 //  \   \         Application : sch2hdl
 //  /   /         Filename : main.vf
-// /___/   /\     Timestamp : 10/04/2019 23:46:53
+// /___/   /\     Timestamp : 10/05/2019 12:42:22
 // \   \  /  \ 
 //  \___\/\___\ 
 //
@@ -353,7 +353,7 @@ module ct_MUSER_main(CLK,
    wire XLXN_17;
    
    VCC  XLXI_1 (.P(XLXN_1));
-   (* HU_SET = "XLXI_5_0" *) 
+   (* HU_SET = "XLXI_5_7" *) 
    CD4CE_HXILINX_main  XLXI_5 (.C(CLK), 
                               .CE(XLXN_1), 
                               .CLR(CLR), 
@@ -363,7 +363,7 @@ module ct_MUSER_main(CLK,
                               .Q2(A_2), 
                               .Q3(A_3), 
                               .TC());
-   (* HU_SET = "XLXI_6_1" *) 
+   (* HU_SET = "XLXI_6_8" *) 
    CD4CE_HXILINX_main  XLXI_6 (.C(XLXN_17), 
                               .CE(XLXN_1), 
                               .CLR(XLXN_16), 
@@ -481,22 +481,22 @@ module main(OSC,
                  .I1(XLXN_108_DUMMY), 
                  .O(XLXN_64));
    GND  XLXI_29 (.G(XLXN_76));
-   (* HU_SET = "XLXI_38_2" *) 
+   (* HU_SET = "XLXI_38_9" *) 
    M2_1_HXILINX_main  XLXI_38 (.D0(XLXN_66_DUMMY), 
                               .D1(XLXN_70_DUMMY), 
                               .S0(XLXN_108_DUMMY), 
                               .O(XLXN_97));
-   (* HU_SET = "XLXI_39_3" *) 
+   (* HU_SET = "XLXI_39_10" *) 
    M2_1_HXILINX_main  XLXI_39 (.D0(XLXN_67_DUMMY), 
                               .D1(XLXN_71_DUMMY), 
                               .S0(XLXN_108_DUMMY), 
                               .O(XLXN_98));
-   (* HU_SET = "XLXI_40_4" *) 
+   (* HU_SET = "XLXI_40_11" *) 
    M2_1_HXILINX_main  XLXI_40 (.D0(XLXN_68_DUMMY), 
                               .D1(XLXN_72_DUMMY), 
                               .S0(XLXN_108_DUMMY), 
                               .O(XLXN_99));
-   (* HU_SET = "XLXI_41_5" *) 
+   (* HU_SET = "XLXI_41_12" *) 
    M2_1_HXILINX_main  XLXI_41 (.D0(XLXN_69_DUMMY), 
                               .D1(XLXN_73_DUMMY), 
                               .S0(XLXN_108_DUMMY), 
@@ -514,7 +514,7 @@ module main(OSC,
                                              .g(XLXN_107));
    INV  XLXI_43 (.I(XLXN_108_DUMMY), 
                 .O(XLXN_109));
-   (* HU_SET = "XLXI_44_6" *) 
+   (* HU_SET = "XLXI_44_13" *) 
    COMP4_HXILINX_main  XLXI_44 (.A0(XLXN_66_DUMMY), 
                                .A1(XLXN_67_DUMMY), 
                                .A2(XLXN_68_DUMMY), 
