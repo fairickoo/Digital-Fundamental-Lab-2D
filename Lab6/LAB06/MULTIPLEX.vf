@@ -1,0 +1,94 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : MULTIPLEX.vf
+// /___/   /\     Timestamp : 10/06/2019 16:25:22
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab6/LAB06/MULTIPLEX.vf -w C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/sym_module/4_BIT_MUX/MULTIPLEX.sch
+//Design Name: MULTIPLEX
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module M2_1_HXILINX_MULTIPLEX (O, D0, D1, S0);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  S0;
+
+   reg O;
+
+   always @ ( D0 or D1 or S0)
+   begin
+      case(S0)
+      1'b0 : O <= D0;
+      1'b1 : O <= D1;
+      endcase
+   end
+    
+endmodule
+`timescale 1ns / 1ps
+
+module MULTIPLEX(CLK_IN, 
+                 IN1_0, 
+                 IN1_1, 
+                 IN1_2, 
+                 IN1_3, 
+                 IN10_0, 
+                 IN10_1, 
+                 IN10_2, 
+                 IN10_3, 
+                 OUT_0, 
+                 OUT_1, 
+                 OUT_2, 
+                 OUT_3);
+
+    input CLK_IN;
+    input IN1_0;
+    input IN1_1;
+    input IN1_2;
+    input IN1_3;
+    input IN10_0;
+    input IN10_1;
+    input IN10_2;
+    input IN10_3;
+   output OUT_0;
+   output OUT_1;
+   output OUT_2;
+   output OUT_3;
+   
+   
+   (* HU_SET = "XLXI_1_0" *) 
+   M2_1_HXILINX_MULTIPLEX  XLXI_1 (.D0(IN10_0), 
+                                  .D1(IN1_0), 
+                                  .S0(CLK_IN), 
+                                  .O(OUT_0));
+   (* HU_SET = "XLXI_2_1" *) 
+   M2_1_HXILINX_MULTIPLEX  XLXI_2 (.D0(IN10_1), 
+                                  .D1(IN1_1), 
+                                  .S0(CLK_IN), 
+                                  .O(OUT_1));
+   (* HU_SET = "XLXI_3_2" *) 
+   M2_1_HXILINX_MULTIPLEX  XLXI_3 (.D0(IN10_2), 
+                                  .D1(IN1_2), 
+                                  .S0(CLK_IN), 
+                                  .O(OUT_2));
+   (* HU_SET = "XLXI_4_3" *) 
+   M2_1_HXILINX_MULTIPLEX  XLXI_4 (.D0(IN10_3), 
+                                  .D1(IN1_3), 
+                                  .S0(CLK_IN), 
+                                  .O(OUT_3));
+endmodule

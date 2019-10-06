@@ -1,0 +1,199 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : main.vf
+// /___/   /\     Timestamp : 10/06/2019 16:38:47
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab6/LAB06/main.vf -w C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab6/LAB06/main.sch
+//Design Name: main
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module COMP4_HXILINX_main (EQ, A0, A1, A2, A3, B0, B1, B2, B3);
+    
+
+   output EQ;
+
+   input A0;
+   input A1;
+   input A2;
+   input A3;
+   input B0;
+   input B1;
+   input B2;
+   input B3;
+
+   assign EQ = ((A0==B0) && (A1==B1) && (A2==B2) && (A3==B3)) ;
+
+endmodule
+`timescale 1ns / 1ps
+
+module DIV_10_MUSER_main(C_IN, 
+                         C_OUT);
+
+    input C_IN;
+   output C_OUT;
+   
+   wire XLXN_1;
+   
+   CLK_DIV_2  XLXI_1 (.C_IN(C_IN), 
+                     .C_OUT(XLXN_1));
+   CLK_DIV_5  XLXI_2 (.C_IN(XLXN_1), 
+                     .C_OUT(C_OUT));
+endmodule
+`timescale 1ns / 1ps
+
+module CLK_DIV_MUSER_main(CLK_IN, 
+                          CLK_OUT);
+
+    input CLK_IN;
+   output CLK_OUT;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_5;
+   wire XLXN_12;
+   
+   CLK_DIV_2  XLXI_1 (.C_IN(CLK_IN), 
+                     .C_OUT(XLXN_1));
+   DIV_10_MUSER_main  XLXI_2 (.C_IN(XLXN_1), 
+                             .C_OUT(XLXN_2));
+   DIV_10_MUSER_main  XLXI_3 (.C_IN(XLXN_2), 
+                             .C_OUT(XLXN_3));
+   DIV_10_MUSER_main  XLXI_4 (.C_IN(XLXN_3), 
+                             .C_OUT(XLXN_5));
+   DIV_10_MUSER_main  XLXI_5 (.C_IN(XLXN_5), 
+                             .C_OUT(XLXN_12));
+   DIV_10_MUSER_main  XLXI_6 (.C_IN(XLXN_12), 
+                             .C_OUT(CLK_OUT));
+endmodule
+`timescale 1ns / 1ps
+
+module main(OSC, 
+            PB_3, 
+            BUZZER, 
+            COMMON_0, 
+            COMMON_1, 
+            DATA_0, 
+            DATA_1, 
+            DATA_2, 
+            DATA_3, 
+            DATA_4, 
+            DATA_5, 
+            DATA_6);
+
+   (* LOC = "P123" *) 
+    input OSC;
+   (* LOC = "P47" *) 
+    input PB_3;
+   (* LOC = "P83" *) 
+   output BUZZER;
+   (* LOC = "P44" *) 
+   output COMMON_0;
+   (* LOC = "P43" *) 
+   output COMMON_1;
+   (* LOC = "P41" *) 
+   output DATA_0;
+   (* LOC = "P40" *) 
+   output DATA_1;
+   (* LOC = "P35" *) 
+   output DATA_2;
+   (* LOC = "P34" *) 
+   output DATA_3;
+   (* LOC = "P32" *) 
+   output DATA_4;
+   (* LOC = "P29" *) 
+   output DATA_5;
+   (* LOC = "P27" *) 
+   output DATA_6;
+   
+   (* LOC = "P82" *) 
+   wire XLXN_4;
+   wire XLXN_35;
+   wire XLXN_36;
+   wire XLXN_37;
+   wire XLXN_38;
+   wire XLXN_58;
+   wire XLXN_96;
+   wire XLXN_97;
+   wire XLXN_105;
+   wire XLXN_107;
+   wire XLXN_108;
+   wire XLXN_109;
+   wire XLXN_110;
+   wire XLXN_113;
+   wire XLXN_125;
+   wire XLXN_126;
+   wire COMMON_0_DUMMY;
+   
+   assign COMMON_0 = COMMON_0_DUMMY;
+   CLK_DIV_MUSER_main  XLXI_1 (.CLK_IN(OSC), 
+                              .CLK_OUT(COMMON_0_DUMMY));
+   AND2  XLXI_2 (.I0(PB_3), 
+                .I1(COMMON_0_DUMMY), 
+                .O(XLXN_4));
+   COUNTER  XLXI_3 (.CLK_IN(XLXN_4), 
+                   .CLR(XLXN_58), 
+                   .OUT_1_0(XLXN_108), 
+                   .OUT_1_1(XLXN_109), 
+                   .OUT_1_2(XLXN_110), 
+                   .OUT_1_3(XLXN_113), 
+                   .OUT_10_0(XLXN_96), 
+                   .OUT_10_1(XLXN_97), 
+                   .OUT_10_2(XLXN_105), 
+                   .OUT_10_3(XLXN_107));
+   MULTIPLEX  XLXI_14 (.CLK_IN(COMMON_0_DUMMY), 
+                      .IN1_0(XLXN_108), 
+                      .IN1_1(XLXN_109), 
+                      .IN1_2(XLXN_110), 
+                      .IN1_3(XLXN_113), 
+                      .IN10_0(XLXN_96), 
+                      .IN10_1(XLXN_97), 
+                      .IN10_2(XLXN_105), 
+                      .IN10_3(XLXN_107), 
+                      .OUT_0(XLXN_35), 
+                      .OUT_1(XLXN_36), 
+                      .OUT_2(XLXN_37), 
+                      .OUT_3(XLXN_38));
+   seven_segment_circuit  XLXI_16 (.A0(XLXN_35), 
+                                  .A1(XLXN_36), 
+                                  .A2(XLXN_37), 
+                                  .A3(XLXN_38), 
+                                  .a(DATA_0), 
+                                  .b(DATA_1), 
+                                  .c(DATA_2), 
+                                  .d(DATA_3), 
+                                  .e(DATA_4), 
+                                  .f(DATA_5), 
+                                  .g(DATA_6));
+   INV  XLXI_17 (.I(COMMON_0_DUMMY), 
+                .O(COMMON_1));
+   GND  XLXI_18 (.G(XLXN_58));
+   (* HU_SET = "XLXI_19_0" *) 
+   COMP4_HXILINX_main  XLXI_19 (.A0(XLXN_96), 
+                               .A1(XLXN_97), 
+                               .A2(XLXN_105), 
+                               .A3(XLXN_107), 
+                               .B0(XLXN_108), 
+                               .B1(XLXN_109), 
+                               .B2(XLXN_110), 
+                               .B3(XLXN_113), 
+                               .EQ(XLXN_126));
+   AND2  XLXI_28 (.I0(XLXN_125), 
+                 .I1(XLXN_126), 
+                 .O(BUZZER));
+   INV  XLXI_29 (.I(PB_3), 
+                .O(XLXN_125));
+endmodule

@@ -1,0 +1,62 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : CLK_DIV.vf
+// /___/   /\     Timestamp : 10/06/2019 16:25:22
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab6/LAB06/CLK_DIV.vf -w C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab6/LAB06/CLK_DIV.sch
+//Design Name: CLK_DIV
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module DIV_10_MUSER_CLK_DIV(C_IN, 
+                            C_OUT);
+
+    input C_IN;
+   output C_OUT;
+   
+   wire XLXN_1;
+   
+   CLK_DIV_2  XLXI_1 (.C_IN(C_IN), 
+                     .C_OUT(XLXN_1));
+   CLK_DIV_5  XLXI_2 (.C_IN(XLXN_1), 
+                     .C_OUT(C_OUT));
+endmodule
+`timescale 1ns / 1ps
+
+module CLK_DIV(CLK_IN, 
+               CLK_OUT);
+
+    input CLK_IN;
+   output CLK_OUT;
+   
+   wire XLXN_1;
+   wire XLXN_2;
+   wire XLXN_3;
+   wire XLXN_5;
+   wire XLXN_12;
+   
+   CLK_DIV_2  XLXI_1 (.C_IN(CLK_IN), 
+                     .C_OUT(XLXN_1));
+   DIV_10_MUSER_CLK_DIV  XLXI_2 (.C_IN(XLXN_1), 
+                                .C_OUT(XLXN_2));
+   DIV_10_MUSER_CLK_DIV  XLXI_3 (.C_IN(XLXN_2), 
+                                .C_OUT(XLXN_3));
+   DIV_10_MUSER_CLK_DIV  XLXI_4 (.C_IN(XLXN_3), 
+                                .C_OUT(XLXN_5));
+   DIV_10_MUSER_CLK_DIV  XLXI_5 (.C_IN(XLXN_5), 
+                                .C_OUT(XLXN_12));
+   DIV_10_MUSER_CLK_DIV  XLXI_6 (.C_IN(XLXN_12), 
+                                .C_OUT(CLK_OUT));
+endmodule

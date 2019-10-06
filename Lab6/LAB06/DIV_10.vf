@@ -1,0 +1,35 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : DIV_10.vf
+// /___/   /\     Timestamp : 10/06/2019 16:25:22
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family spartan6 -verilog C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab6/LAB06/DIV_10.vf -w C:/Users/pasaw/Desktop/2D/Digital-Fundamental-Lab-2D/Lab6/LAB06/DIV_10.sch
+//Design Name: DIV_10
+//Device: spartan6
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module DIV_10(C_IN, 
+              C_OUT);
+
+    input C_IN;
+   output C_OUT;
+   
+   wire XLXN_1;
+   
+   CLK_DIV_2  XLXI_1 (.C_IN(C_IN), 
+                     .C_OUT(XLXN_1));
+   CLK_DIV_5  XLXI_2 (.C_IN(XLXN_1), 
+                     .C_OUT(C_OUT));
+endmodule
