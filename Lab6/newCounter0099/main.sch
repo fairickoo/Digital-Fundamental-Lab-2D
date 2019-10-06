@@ -6,31 +6,73 @@
         <trait edittrait="all:0" />
     </attr>
     <netlist>
-        <signal name="OSC" />
-        <signal name="PB_3" />
+        <signal name="OSC">
+            <attr value="P123" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
+        <signal name="PB_3">
+            <attr value="P47" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
         <signal name="XLXN_16" />
-        <signal name="XLXN_7" />
-        <signal name="CLR" />
-        <signal name="XLXN_41" />
-        <signal name="XLXN_42" />
-        <signal name="XLXN_43" />
-        <signal name="XLXN_44" />
-        <signal name="XLXN_45" />
-        <signal name="XLXN_46" />
-        <signal name="XLXN_47" />
-        <signal name="XLXN_48" />
+        <signal name="COMMON0">
+            <attr value="P44" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
+        <signal name="CLR">
+        </signal>
         <signal name="XLXN_49" />
         <signal name="XLXN_50" />
         <signal name="XLXN_51" />
         <signal name="XLXN_52" />
-        <signal name="a" />
-        <signal name="b" />
-        <signal name="c" />
-        <signal name="d" />
-        <signal name="e" />
-        <signal name="f" />
-        <signal name="g" />
-        <signal name="XLXN_62" />
+        <signal name="a">
+            <attr value="P41" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
+        <signal name="b">
+            <attr value="P40" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
+        <signal name="c">
+            <attr value="P35" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
+        <signal name="d">
+            <attr value="P34" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
+        <signal name="e">
+            <attr value="P32" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
+        <signal name="f">
+            <attr value="P29" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
+        <signal name="g">
+            <attr value="P27" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
         <signal name="XLXN_63" />
         <signal name="XLXN_64" />
         <signal name="XLXN_65" />
@@ -40,10 +82,27 @@
         <signal name="XLXN_69" />
         <signal name="XLXN_70" />
         <signal name="XLXN_71" />
-        <signal name="BUZZER" />
+        <signal name="BUZZER">
+            <attr value="P43" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
+        <signal name="XLXN_72" />
+        <signal name="XLXN_73" />
+        <signal name="XLXN_74" />
+        <signal name="XLXN_75" />
+        <signal name="XLXN_76" />
+        <signal name="COMMON1">
+            <attr value="P43" name="LOC">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
+        <signal name="XLXN_78" />
         <port polarity="Input" name="OSC" />
         <port polarity="Input" name="PB_3" />
-        <port polarity="Input" name="CLR" />
+        <port polarity="Output" name="COMMON0" />
         <port polarity="Output" name="a" />
         <port polarity="Output" name="b" />
         <port polarity="Output" name="c" />
@@ -52,6 +111,7 @@
         <port polarity="Output" name="f" />
         <port polarity="Output" name="g" />
         <port polarity="Output" name="BUZZER" />
+        <port polarity="Output" name="COMMON1" />
         <blockdef name="CLK_DIV">
             <timestamp>2019-10-5T11:38:48</timestamp>
             <rect width="256" x="64" y="-64" height="64" />
@@ -127,12 +187,30 @@
             <line x2="64" y1="-320" y2="-320" x1="0" />
             <line x2="64" y1="-256" y2="-256" x1="0" />
         </blockdef>
+        <blockdef name="gnd">
+            <timestamp>2000-1-1T10:10:10</timestamp>
+            <line x2="64" y1="-64" y2="-96" x1="64" />
+            <line x2="52" y1="-48" y2="-48" x1="76" />
+            <line x2="60" y1="-32" y2="-32" x1="68" />
+            <line x2="40" y1="-64" y2="-64" x1="88" />
+            <line x2="64" y1="-64" y2="-80" x1="64" />
+            <line x2="64" y1="-128" y2="-96" x1="64" />
+        </blockdef>
+        <blockdef name="inv">
+            <timestamp>2000-1-1T10:10:10</timestamp>
+            <line x2="64" y1="-32" y2="-32" x1="0" />
+            <line x2="160" y1="-32" y2="-32" x1="224" />
+            <line x2="128" y1="-64" y2="-32" x1="64" />
+            <line x2="64" y1="-32" y2="0" x1="128" />
+            <line x2="64" y1="0" y2="-64" x1="64" />
+            <circle r="16" cx="144" cy="-32" />
+        </blockdef>
         <block symbolname="CLK_DIV" name="XLXI_1">
             <blockpin signalname="OSC" name="CLK_IN" />
-            <blockpin signalname="XLXN_7" name="CLK_OUT" />
+            <blockpin signalname="COMMON0" name="CLK_OUT" />
         </block>
         <block symbolname="and2" name="XLXI_5">
-            <blockpin signalname="XLXN_7" name="I0" />
+            <blockpin signalname="COMMON0" name="I0" />
             <blockpin signalname="PB_3" name="I1" />
             <blockpin signalname="XLXN_16" name="O" />
         </block>
@@ -149,7 +227,7 @@
             <blockpin signalname="XLXN_70" name="B_3" />
         </block>
         <block symbolname="MULTIPLEX" name="XLXI_9">
-            <blockpin signalname="XLXN_7" name="CLK_IN" />
+            <blockpin signalname="COMMON0" name="CLK_IN" />
             <blockpin signalname="XLXN_63" name="IN10_0" />
             <blockpin signalname="XLXN_64" name="IN10_1" />
             <blockpin signalname="XLXN_65" name="IN10_2" />
@@ -192,6 +270,13 @@
             <blockpin signalname="XLXN_71" name="I1" />
             <blockpin signalname="BUZZER" name="O" />
         </block>
+        <block symbolname="gnd" name="XLXI_14">
+            <blockpin signalname="CLR" name="G" />
+        </block>
+        <block symbolname="inv" name="XLXI_15">
+            <blockpin signalname="COMMON0" name="I" />
+            <blockpin signalname="COMMON1" name="O" />
+        </block>
     </netlist>
     <sheet sheetnum="1" width="3520" height="2720">
         <instance x="240" y="704" name="XLXI_1" orien="R0">
@@ -212,10 +297,14 @@
             <wire x2="928" y1="592" y2="592" x1="912" />
         </branch>
         <instance x="656" y="688" name="XLXI_5" orien="R0" />
-        <branch name="XLXN_7">
+        <branch name="COMMON0">
             <wire x2="640" y1="672" y2="672" x1="624" />
             <wire x2="640" y1="672" y2="1104" x1="640" />
             <wire x2="1904" y1="1104" y2="1104" x1="640" />
+            <wire x2="640" y1="1104" y2="1328" x1="640" />
+            <wire x2="656" y1="1328" y2="1328" x1="640" />
+            <wire x2="640" y1="1328" y2="1424" x1="640" />
+            <wire x2="912" y1="1424" y2="1424" x1="640" />
             <wire x2="656" y1="624" y2="624" x1="640" />
             <wire x2="640" y1="624" y2="672" x1="640" />
         </branch>
@@ -224,7 +313,6 @@
         <branch name="CLR">
             <wire x2="928" y1="1040" y2="1040" x1="896" />
         </branch>
-        <iomarker fontsize="28" x="896" y="1040" name="CLR" orien="R180" />
         <instance x="1904" y="1136" name="XLXI_9" orien="R0">
         </instance>
         <branch name="XLXN_50">
@@ -330,8 +418,16 @@
         <instance x="2528" y="1664" name="XLXI_13" orien="R0" />
         <iomarker fontsize="28" x="224" y="560" name="PB_3" orien="R180" />
         <branch name="BUZZER">
-            <wire x2="2816" y1="1568" y2="1568" x1="2784" />
+            <wire x2="2800" y1="1568" y2="1568" x1="2784" />
+            <wire x2="2832" y1="1568" y2="1568" x1="2800" />
         </branch>
-        <iomarker fontsize="28" x="2816" y="1568" name="BUZZER" orien="R0" />
+        <instance x="768" y="976" name="XLXI_14" orien="R90" />
+        <iomarker fontsize="28" x="2832" y="1568" name="BUZZER" orien="R0" />
+        <instance x="656" y="1360" name="XLXI_15" orien="R0" />
+        <branch name="COMMON1">
+            <wire x2="912" y1="1328" y2="1328" x1="880" />
+        </branch>
+        <iomarker fontsize="28" x="912" y="1328" name="COMMON1" orien="R0" />
+        <iomarker fontsize="28" x="912" y="1424" name="COMMON0" orien="R0" />
     </sheet>
 </drawing>
